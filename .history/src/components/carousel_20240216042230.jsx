@@ -1,5 +1,4 @@
 import Slider from 'react-slick';
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -9,23 +8,21 @@ import car3 from '../assets/car3.jpg';
 import car4 from '../assets/car4.jpg';
 import car5 from '../assets/car5.jpg';
 
-import CarouselItem from './carousel-item';
-
 const images = [car1, car2, car3, car4, car5];
 
 const Carousel = () => {
   const settings = {
-    dots: false,
-    infinite: true,
+    dots: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: '0px',
+    centerPadding: '5px',
   };
 
   const renderImages = () =>
-    images.map((image, index) => <CarouselItem key={index} image={image} />);
+    images.map((image, index) => <img key={index} src={image} alt={`Car ${index + 1}`} />);
 
   return (
     <div className='flex items-center justify-center'>
